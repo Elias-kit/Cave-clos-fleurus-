@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Cave Clos Fleurus — Cave & Comptoir de dégustation · Saint-Germain-des-Prés, Paris 6e</title>
+  <meta name="description" content="Cave Clos Fleurus, votre caviste & bar à vin au cœur du 6e arrondissement de Paris, à deux pas du Jardin du Luxembourg. Vins de vignerons artisans, spiritueux, bières artisanales, dégustation sur place et événements privés." />
+  <meta name="keywords" content="cave à vin Paris 6, caviste Saint-Germain-des-Prés, bar à vin Luxembourg, vins Bourgogne Paris, dégustation vin Paris, événement privé vin Paris" />
+  <meta name="author" content="Cave Clos Fleurus" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cave Clos Fleurus — Cave & Comptoir de dégustation" />
+  <meta property="og:description" content="Caviste & bar à vin à Saint-Germain-des-Prés. Vins de petits producteurs, dégustation sur place, événements privés. À deux pas du Jardin du Luxembourg." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.cave-clos-fleurus.fr" />
+  <meta property="og:image" content="https://www.cave-clos-fleurus.fr/og-image.jpg" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LiquorStore",
+    "name": "Cave Clos Fleurus",
+    "description": "Cave à vin & comptoir de dégustation, Paris 6e",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5 Rue de Fleurus",
+      "addressLocality": "Paris",
+      "postalCode": "75006",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33627186582",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "74"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== SCROLL PROGRESS BAR ===== -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Cave Clos Fleurus — Accueil">
+        <span class="logo-main">Cave Clos Fleurus</span>
+        <span class="logo-sub">Cave &amp; Comptoir · Paris 6<sup>e</sup></span>
+      </a>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="#about"      class="nav-link" role="menuitem">Notre Histoire</a></li>
+        <li role="none"><a href="#selections" class="nav-link" role="menuitem">Sélections</a></li>
+        <li role="none"><a href="#services"   class="nav-link" role="menuitem">Services</a></li>
+        <li role="none"><a href="#avis"       class="nav-link" role="menuitem">Avis</a></li>
+        <li role="none"><a href="#contact"    class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero" aria-label="Présentation de la Cave Clos Fleurus">
+    <div class="hero-parallax" id="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+
+      <!-- Badge Ouvert / Fermé -->
+      <div class="hero-badge" id="status-badge" role="status" aria-live="polite">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span class="badge-text">Chargement...</span>
+      </div>
+
+      <!-- Ornement typographique -->
+      <div class="hero-ornament" aria-hidden="true">
+        <span></span>
+        <i class="fas fa-wine-glass"></i>
+        <span></span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-title-main">Cave Clos Fleurus</span>
+      </h1>
+
+      <p class="hero-subtitle">Cave &amp; Comptoir de dégustation &nbsp;·&nbsp; Saint-Germain-des-Prés</p>
+
+      <p class="hero-tagline">Entrez, installez-vous, laissez-vous guider.</p>
+
+      <p class="hero-place">
+        <i class="fas fa-leaf" aria-hidden="true"></i>
+        À deux pas du Jardin du Luxembourg &nbsp;·&nbsp; 5 Rue de Fleurus, Paris 6<sup>e</sup>
+      </p>
+
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-primary">
+          Découvrir la cave
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nous rendre visite
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <span>Découvrir</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- Wave separator -->
+  <div class="wave-separator" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F2E8D6"/>
+    </svg>
+  </div>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Notre Histoire</span>
+        <h2 class="section-title" id="about-title">Une cave avec une âme,<br><em style="font-style:italic; color:var(--bordeaux);">une adresse de quartier</em></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Colonne image éditoriale -->
+        <div class="about-image-col fade-in">
+          <div class="about-photo-frame">
+            <div class="about-photo-placeholder" aria-hidden="true">
+              <div class="photo-inner">
+                <span class="photo-inner-icon"><i class="fas fa-wine-bottle"></i></span>
+                <span class="photo-inner-label">Cave Clos Fleurus · Paris 6e</span>
+              </div>
+            </div>
+          </div>
+
+          <blockquote class="about-quote">
+            <span class="about-quote-icon"><i class="fas fa-quote-left" aria-hidden="true"></i></span>
+            <p>«&nbsp;Chaque bouteille raconte une histoire. Chaque verre crée une rencontre. C'est pour ça que j'ai ouvert cette cave.&nbsp;»</p>
+            <cite>— Guillaume, sommelier &amp; fondateur</cite>
+          </blockquote>
+        </div>
+
+        <!-- Texte éditorial -->
+        <div class="about-text fade-in">
+          <span class="about-eyebrow">Depuis décembre 2021</span>
+
+          <h3>Guillaume,<br><em>sommelier passionné</em></h3>
+
+          <p class="about-intro">Au cœur du 6<sup>e</sup>, à deux pas des grilles dorées du Jardin du Luxembourg, la Cave Clos Fleurus est bien plus qu'un caviste. C'est un endroit où l'on revient.</p>
+
+          <div class="about-sep"></div>
+
+          <p>Guillaume a conçu cet espace à son image — chaleureux, sans ostentation, guidé par une seule boussole : le goût juste. Les étiquettes des grandes maisons côtoient ici des cuvées confidentielles dénichées lors de voyages au cœur des terroirs, auprès de vignerons qui travaillent <strong>à l'ancienne, avec passion</strong>.</p>
+
+          <p>La Bourgogne y tient une place de choix, tout comme les bulles de Champagne et les pépites des régions moins connues. Pour accompagner les verres, saucissons corses, charcuteries artisanales et planches du terroir composent des moments simples et généreux.</p>
+
+          <p>On peut venir seul, en couple, entre amis ou entre collègues. On peut repartir avec une bouteille sous le bras ou rester jusqu'à la fermeture. <strong>C'est ce genre d'endroit.</strong></p>
+
+          <div class="about-features" role="list">
+            <div class="feature-item" role="listitem">
+              <i class="fas fa-leaf" aria-hidden="true"></i>
+              <span>Vignerons artisans</span>
+            </div>
+            <div class="feature-item" role="listitem">
+              <i class="fas fa-map-pin" aria-hidden="true"></i>
+              <span>Près du Luxembourg</span>
+            </div>
+            <div class="feature-item" role="listitem">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <span>4,8 / 5 sur Google</span>
+            </div>
+            <div class="feature-item" role="listitem">
+              <i class="fas fa-dog" aria-hidden="true"></i>
+              <span>Chiens bienvenus</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider" aria-hidden="true"></div>
+
+  <!-- ===================== SELECTIONS ===================== -->
+  <section class="section selections" id="selections" aria-labelledby="selections-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Ce que l'on aime partager</span>
+        <h2 class="section-title" id="selections-title">Nos Sélections</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">Chaque produit est choisi personnellement, directement auprès des producteurs. Pas de compromis.</p>
+      </div>
+
+      <div class="selections-grid">
+
+        <!-- Vins -->
+        <article class="selection-card fade-in" data-delay="0">
+          <div class="card-image wine-bg" aria-hidden="true">
+            <span class="card-label">Cave à vins</span>
+            <div class="card-icon"><i class="fas fa-wine-glass-alt"></i></div>
+          </div>
+          <div class="card-content">
+            <h3>Les Vins</h3>
+            <span class="card-tagline">Bourgogne, Champagne &amp; découvertes</span>
+            <p>Une sélection rigoureuse de vignerons artisans qui travaillent leurs terres sans compromis. La Bourgogne y tient une place centrale, aux côtés des bulles et de belles pépites régionales qui ne figurent pas dans les grandes enseignes.</p>
+            <ul class="card-tags" aria-label="Régions représentées">
+              <li>Bourgogne</li>
+              <li>Champagne</li>
+              <li>Bordeaux</li>
+              <li>Rhône &amp; Loire</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Spiritueux -->
+        <article class="selection-card fade-in" data-delay="100">
+          <div class="card-image spirits-bg" aria-hidden="true">
+            <span class="card-label">Spiritueux</span>
+            <div class="card-icon"><i class="fas fa-cocktail"></i></div>
+          </div>
+          <div class="card-content">
+            <h3>Spiritueux Artisanaux</h3>
+            <span class="card-tagline">Distilleries familiales françaises</span>
+            <p>Whisky, cognac, armagnac, gin… Guillaume cherche les mêmes qualités que pour ses vins : des producteurs indépendants, un savoir-faire transmis, un caractère identifiable. Loin des grandes productions industrielles.</p>
+            <ul class="card-tags">
+              <li>Whisky français</li>
+              <li>Gin artisanal</li>
+              <li>Cognac</li>
+              <li>Calvados</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Bières -->
+        <article class="selection-card fade-in" data-delay="150">
+          <div class="card-image beer-bg" aria-hidden="true">
+            <span class="card-label">Brasserie</span>
+            <div class="card-icon"><i class="fas fa-beer"></i></div>
+          </div>
+          <div class="card-content">
+            <h3>Bières Artisanales</h3>
+            <span class="card-tagline">Brasseries indépendantes</span>
+            <p>Pour les amateurs de houblon qui veulent sortir des sentiers battus. Une belle sélection de brasseries françaises attachées à leurs recettes, leurs territoires et leurs saisons.</p>
+            <ul class="card-tags">
+              <li>IPA</li>
+              <li>Stout</li>
+              <li>Blonde &amp; Ambrée</li>
+              <li>Saison</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Produits gourmands -->
+        <article class="selection-card fade-in" data-delay="200">
+          <div class="card-image food-bg" aria-hidden="true">
+            <span class="card-label">Terroir</span>
+            <div class="card-icon"><i class="fas fa-cheese"></i></div>
+          </div>
+          <div class="card-content">
+            <h3>Produits Gourmands</h3>
+            <span class="card-tagline">Pour accompagner les verres</span>
+            <p>Saucissons corses, charcuteries artisanales, planches généreuses — les petits plaisirs qui transforment une bouteille en un vrai moment. Tout est choisi avec le même soin que les vins.</p>
+            <ul class="card-tags">
+              <li>Saucisson corse</li>
+              <li>Charcuterie</li>
+              <li>Planches gourmandes</li>
+              <li>Terroir français</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ESPRIT — Section éditoriale ===================== -->
+  <section class="section spirit" id="spirit" aria-labelledby="spirit-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">L'esprit du lieu</span>
+        <h2 class="section-title" id="spirit-title">Plus qu'une cave,<br><em style="font-style:italic; color:var(--bordeaux);">un rendez-vous</em></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Chiffres clés -->
+      <div class="spirit-stats fade-in" role="list" aria-label="Chiffres clés Cave Clos Fleurus">
+        <div class="spirit-stat" role="listitem">
+          <span class="spirit-stat-number" data-count="4.8" aria-label="Note de 4,8 étoiles">4,8<span class="spirit-stat-unit" aria-hidden="true"> ★</span></span>
+          <span class="spirit-stat-label">Note Google</span>
+        </div>
+        <div class="spirit-stat-sep" aria-hidden="true"></div>
+        <div class="spirit-stat" role="listitem">
+          <span class="spirit-stat-number" data-count="74">74</span>
+          <span class="spirit-stat-label">Avis clients</span>
+        </div>
+        <div class="spirit-stat-sep" aria-hidden="true"></div>
+        <div class="spirit-stat" role="listitem">
+          <span class="spirit-stat-number" data-count="3" data-prefix="+">+3<span class="spirit-stat-unit"> ans</span></span>
+          <span class="spirit-stat-label">Depuis décembre 2021</span>
+        </div>
+        <div class="spirit-stat-sep" aria-hidden="true"></div>
+        <div class="spirit-stat" role="listitem">
+          <span class="spirit-stat-number">6<sup>e</sup></span>
+          <span class="spirit-stat-label">Arrondissement · Paris</span>
+        </div>
+      </div>
+
+      <!-- Citation manifesto -->
+      <blockquote class="spirit-manifesto fade-in">
+        <p>Une cave à vins, c'est d'abord un endroit où l'on se sent bien.<br>
+        Où le vin n'est pas une performance, mais une conversation.</p>
+      </blockquote>
+
+      <!-- Trois piliers éditoriaux -->
+      <div class="spirit-cards">
+        <article class="spirit-card fade-in">
+          <div class="spirit-card-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
+          <h3>Directement des producteurs</h3>
+          <p>Chaque bouteille arrive ici parce que Guillaume a rencontré le vigneron, visité la cave, goûté la cuvée. Pas d'intermédiaire, pas de catalogue — une relation humaine avant tout.</p>
+        </article>
+        <article class="spirit-card fade-in" data-delay="100">
+          <div class="spirit-card-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Ancrée dans le quartier</h3>
+          <p>La Cave Clos Fleurus n'est pas un concept. C'est une adresse de quartier, connue des habitués du Luxembourg, des promeneurs du dimanche et des amateurs éclairés.</p>
+        </article>
+        <article class="spirit-card fade-in" data-delay="200">
+          <div class="spirit-card-icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
+          <h3>Un conseil sans jargon</h3>
+          <p>Vous n'avez pas besoin de connaître les millésimes pour entrer. Guillaume s'adapte à votre palais, votre occasion, votre budget — et vous surprend toujours agréablement.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="gold-divider" aria-hidden="true"></div>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="section services dark-section" id="services" aria-labelledby="services-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-eyebrow section-eyebrow--light">Des moments à vivre</span>
+        <h2 class="section-title section-title--light" id="services-title">Services &amp; Expériences</h2>
+        <div class="section-divider section-divider--gold"></div>
+        <p class="section-description section-description--light">De la dégustation improvisée au dîner vigneron mémorable — la cave s'adapte à vos envies.</p>
+      </div>
+
+      <!-- Service mis en avant -->
+      <div class="service-featured fade-in">
+        <div class="service-featured-icon" aria-hidden="true">
+          <i class="fas fa-utensils"></i>
+        </div>
+        <div class="service-featured-text">
+          <h3>Dîners Vignerons</h3>
+          <p>Quelques fois par an, Guillaume invite un vigneron à passer la soirée avec vous. On mange, on boit, on écoute. Des soirées confidentielles, en petit comité, où les vins se racontent à la source — par ceux qui les font.</p>
+        </div>
+        <div class="service-featured-action">
+          <a href="#contact" class="btn btn-gold">Être informé</a>
+        </div>
+      </div>
+
+      <!-- Services secondaires -->
+      <div class="services-grid">
+
+        <article class="service-card fade-in">
+          <div class="service-icon" aria-hidden="true"><i class="fas fa-glass-cheers"></i></div>
+          <h3>Comptoir de Dégustation</h3>
+          <p>Posez-vous au comptoir. Guillaume vous guide à travers ses coups de cœur du moment — verre au verre, planche gourmande, ambiance cosy. La cave dans ce qu'elle a de meilleur.</p>
+        </article>
+
+        <article class="service-card fade-in">
+          <div class="service-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+          <h3>Tablées &amp; Événements Privés</h3>
+          <p>Anniversaire, réunion d'entreprise, pot de départ — la cave se privatise pour vos tablées de 10 personnes et plus. Un cadre intime, une sélection sur-mesure, des souvenirs.</p>
+        </article>
+
+        <article class="service-card fade-in">
+          <div class="service-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
+          <h3>Afterworks</h3>
+          <p>Terminez votre journée bien. La Cave Clos Fleurus est l'endroit idéal pour décompresser entre collègues — à deux pas du Luxembourg, dans une vraie cave de quartier.</p>
+        </article>
+
+        <article class="service-card fade-in">
+          <div class="service-icon" aria-hidden="true"><i class="fas fa-truck"></i></div>
+          <h3>Livraison à Domicile</h3>
+          <p>Vos bouteilles préférées directement chez vous. Commandez par téléphone, on s'occupe du reste.</p>
+        </article>
+
+        <article class="service-card fade-in">
+          <div class="service-icon" aria-hidden="true"><i class="fas fa-car"></i></div>
+          <h3>Drive Disponible</h3>
+          <p>Pressé ? Commandez à l'avance, passez récupérer. Simple, sans attente.</p>
+        </article>
+
+        <article class="service-card fade-in">
+          <div class="service-icon" aria-hidden="true"><i class="fas fa-gift"></i></div>
+          <h3>Conseils &amp; Cadeaux</h3>
+          <p>Vous cherchez la bouteille parfaite pour un repas, un anniversaire, un cadeau ? Guillaume vous conseille sans jargon, avec le sens du geste juste.</p>
+        </article>
+
+      </div>
+
+      <div class="services-cta fade-in">
+        <p>Pour organiser un événement privé ou simplement nous poser une question —</p>
+        <a href="tel:0627186582" class="btn btn-gold">
+          <i class="fas fa-phone" aria-hidden="true"></i> 06 27 18 65 82
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== AVIS ===================== -->
+  <section class="section reviews" id="avis" aria-labelledby="avis-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-eyebrow">Témoignages</span>
+        <h2 class="section-title" id="avis-title">Ce que l'on nous dit</h2>
+        <div class="section-divider"></div>
+        <div class="reviews-badge" role="img" aria-label="Note moyenne : 4,8 étoiles sur 5, basée sur 74 avis Google">
+          <div class="badge-stars" aria-hidden="true">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="badge-score">4,8 / 5</span>
+          <span class="badge-count">&nbsp;· 74 avis Google</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+
+        <article class="review-card fade-in">
+          <div class="review-stars" aria-label="5 étoiles sur 5">
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <blockquote>«&nbsp;Superbe cave à vins, sélection sur la Bourgogne essentiellement, avec de belles découvertes. Guillaume est de très bon conseil — on ressort avec exactement ce qu'il faut.&nbsp;»</blockquote>
+          <div class="review-author">
+            <div class="author-avatar" aria-hidden="true">M</div>
+            <div class="author-info">
+              <strong>Melissa O.</strong>
+              <span>Google Review</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card fade-in">
+          <div class="review-stars" aria-label="5 étoiles sur 5">
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <blockquote>«&nbsp;Charmant caviste à côté du Luxembourg. Excellent choix de vins, une belle planche de charcuterie, un accueil sympathique et compétent. Vaut vraiment le détour.&nbsp;»</blockquote>
+          <div class="review-author">
+            <div class="author-avatar" aria-hidden="true">T</div>
+            <div class="author-info">
+              <strong>Visiteur</strong>
+              <span>TripAdvisor</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card fade-in">
+          <div class="review-stars" aria-label="5 étoiles sur 5">
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <blockquote>«&nbsp;Le propriétaire a préparé la commande parfaite pour nous — des vins mousseux exactement comme on les aimait. Un régal, et une vraie générosité dans le conseil.&nbsp;»</blockquote>
+          <div class="review-author">
+            <div class="author-avatar" aria-hidden="true">A</div>
+            <div class="author-info">
+              <strong>A. Laurent</strong>
+              <span>Google Review</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card fade-in">
+          <div class="review-stars" aria-label="5 étoiles sur 5">
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <blockquote>«&nbsp;Excellente cave de quartier. Guillaume est un passionné : il vous écoute, comprend ce que vous cherchez, et le vin vous surprend toujours agréablement.&nbsp;»</blockquote>
+          <div class="review-author">
+            <div class="author-avatar" aria-hidden="true">S</div>
+            <div class="author-info">
+              <strong>S. Moreau</strong>
+              <span>Google Review</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact-section dark-section" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-eyebrow section-eyebrow--light">Venir nous voir</span>
+        <h2 class="section-title section-title--light" id="contact-title">Horaires &amp; Contact</h2>
+        <div class="section-divider section-divider--gold"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Horaires -->
+        <div class="contact-hours fade-in">
+          <h3><i class="fas fa-clock" aria-hidden="true"></i> Horaires d'ouverture</h3>
+          <table class="hours-table" aria-label="Horaires d'ouverture de la Cave Clos Fleurus">
+            <tbody>
+              <tr class="closed-day">
+                <td>Lundi</td>
+                <td><span class="closed-badge">Fermé</span></td>
+              </tr>
+              <tr><td>Mardi</td><td>11h00 – 20h30</td></tr>
+              <tr><td>Mercredi</td><td>11h00 – 20h30</td></tr>
+              <tr><td>Jeudi</td><td>11h00 – 20h30</td></tr>
+              <tr><td>Vendredi</td><td>11h00 – 20h30</td></tr>
+              <tr><td>Samedi</td><td>11h00 – 20h30</td></tr>
+              <tr><td>Dimanche</td><td>11h00 – 19h30</td></tr>
+            </tbody>
+          </table>
+
+          <ul class="contact-info-list">
+            <li>
+              <a href="https://maps.google.com/?q=5+Rue+de+Fleurus+75006+Paris" target="_blank" rel="noopener noreferrer" class="contact-info-item" aria-label="Voir sur Google Maps">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>5 Rue de Fleurus, 75006 Paris</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:0627186582" class="contact-info-item" aria-label="Appeler le 06 27 18 65 82">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>06 27 18 65 82</span>
+              </a>
+            </li>
+            <li class="contact-info-item">
+              <i class="fas fa-credit-card" aria-hidden="true"></i>
+              <span>CB, Débit, NFC acceptés</span>
+            </li>
+            <li class="contact-info-item">
+              <i class="fas fa-dog" aria-hidden="true"></i>
+              <span>Chiens acceptés</span>
+            </li>
+            <li class="contact-info-item">
+              <i class="fas fa-leaf" aria-hidden="true"></i>
+              <span>À 5 min à pied du Jardin du Luxembourg</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Google Map -->
+        <div class="contact-map fade-in">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.2887!2d2.33247!3d48.84677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671ffa0d56761%3A0x6ec90c55d6b0e0e0!2s5+Rue+de+Fleurus%2C+75006+Paris%2C+France!5e0!3m2!1sfr!2sfr!4v1700000000000"
+            width="100%"
+            height="100%"
+            style="border:0; min-height:420px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Cave Clos Fleurus — 5 Rue de Fleurus, 75006 Paris"
+            aria-label="Carte Google Maps : Cave Clos Fleurus, 5 Rue de Fleurus, Paris 6e">
+          </iframe>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="contact-form-wrap fade-in">
+          <h3><i class="fas fa-envelope" aria-hidden="true"></i> Nous écrire</h3>
+          <form class="contact-form" id="contact-form" novalidate aria-label="Formulaire de contact">
+            <div class="form-group">
+              <label for="name">Nom <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Votre nom" required aria-required="true" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required aria-required="true" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <select id="subject" name="subject">
+                <option value="">Choisir un sujet</option>
+                <option value="evenement">Événement privé</option>
+                <option value="commande">Commande / Livraison</option>
+                <option value="diner">Dîner vigneron</option>
+                <option value="info">Renseignement</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" placeholder="Votre message..." rows="4" required aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-full">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Envoyer le message
+            </button>
+            <div class="form-feedback" id="form-feedback" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <h2 class="footer-logo">Cave Clos Fleurus</h2>
+          <p>Cave &amp; Comptoir de dégustation<br />5 Rue de Fleurus · Paris 6<sup>e</sup><br />À deux pas du Jardin du Luxembourg</p>
+          <div class="footer-social" role="list" aria-label="Réseaux sociaux">
+            <a href="#" class="social-link" role="listitem" aria-label="Instagram Cave Clos Fleurus">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="social-link" role="listitem" aria-label="Facebook Cave Clos Fleurus">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/33627186582" class="social-link" role="listitem" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Cave Clos Fleurus">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Liens du site">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#about">Notre Histoire</a></li>
+            <li><a href="#selections">Nos Sélections</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#avis">Avis clients</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Coordonnées</h3>
+          <address>
+            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 5 Rue de Fleurus<br />75006 Paris</p>
+            <p><a href="tel:0627186582"><i class="fas fa-phone" aria-hidden="true"></i> 06 27 18 65 82</a></p>
+          </address>
+          <div class="footer-hours-summary">
+            <p><strong>Mar – Sam :</strong> 11h – 20h30</p>
+            <p><strong>Dimanche :</strong> 11h – 19h30</p>
+            <p><strong>Lundi :</strong> Fermé</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cave Clos Fleurus — Tous droits réservés</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flottant -->
+  <a href="https://wa.me/33627186582"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Nous contacter sur WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span class="whatsapp-tooltip" aria-hidden="true">Contactez-nous</span>
+  </a>
+
+  <!-- ===== SCROLL-TO-TOP BUTTON ===== -->
+  <button id="scroll-top-btn" aria-label="Retour en haut de page">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
