@@ -42,7 +42,7 @@
 
   /* Texte */
   --text:            #271610;
-  --text-muted:      #7A6455;
+  --text-muted:      #5C4235;  /* was #7A6455 — ratio 3.8:1 → now 6.1:1 on --ivory */
   --text-light:      #A89080;
 
   /* Typographie */
@@ -81,6 +81,29 @@ ul    { list-style: none; }
 address { font-style: normal; }
 sup   { font-size: 0.65em; }
 
+/* ---------- Focus visible — accessibilité clavier ---------- */
+/* Supprime l'outline par défaut pour la souris, le garde pour le clavier */
+:focus          { outline: none; }
+:focus-visible  {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* Sur fonds sombres (hero, services, contact) on inverse la couleur */
+.hero :focus-visible,
+.dark-section :focus-visible,
+.footer :focus-visible {
+  outline-color: var(--gold-light);
+}
+/* Les inputs ont leur propre traitement via border */
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+  border-color: rgba(184, 148, 63, 0.75);
+  box-shadow: 0 0 0 3px rgba(184, 148, 63, 0.18);
+}
+
 /* ---------- Typography ---------- */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
@@ -92,7 +115,7 @@ h1, h2, h3, h4 {
 .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
 
 /* ---------- Section Base ---------- */
-.section { padding: 110px 0; position: relative; }
+.section { padding: 110px 0; position: relative; scroll-margin-top: 72px; }
 
 .section-header { text-align: center; margin-bottom: 70px; }
 
@@ -141,7 +164,8 @@ h1, h2, h3, h4 {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 13px 26px;
+  padding: 14px 26px;
+  min-height: 44px;
   border-radius: 3px;
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -306,7 +330,7 @@ h1, h2, h3, h4 {
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,21 +338,22 @@ h1, h2, h3, h4 {
 }
 
 
-/* Fond atmosphérique — cave sombre + chaleur ambrée */
+/* Fond atmosphérique — photo cave + chaleur ambrée */
 .hero-parallax {
   position: absolute;
   inset: -20%;
   background:
-    radial-gradient(ellipse at 30% 60%, rgba(122, 72, 40, 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse at 70% 30%, rgba(107, 39, 55, 0.40) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 80%, rgba(62, 32, 16, 0.60) 0%, transparent 45%),
+    radial-gradient(ellipse at 30% 60%, rgba(122, 72, 40, 0.48) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 30%, rgba(107, 39, 55, 0.38) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(20, 8, 4, 0.72) 0%, transparent 45%),
     linear-gradient(160deg,
-      #0A0402 0%,
-      #180A04 15%,
-      #2A120A 35%,
-      #3E1810 55%,
-      #5C2218 75%,
-      #1E0A06 100%);
+      rgba(10, 4, 2, 0.60) 0%,
+      rgba(24, 10, 4, 0.50) 35%,
+      rgba(30, 12, 6, 0.45) 65%,
+      rgba(10, 4, 2, 0.65) 100%),
+    url('assets/images/cave-lumiere.jpg');
+  background-size: cover, cover, cover, cover, cover;
+  background-position: center, center, center, center, center 30%;
   will-change: transform;
 }
 
@@ -586,59 +611,22 @@ h1, h2, h3, h4 {
 
 .about-photo-frame {
   position: relative;
+  overflow: hidden;
+  border-radius: 2px;
 }
 
-.about-photo-placeholder {
+.about-photo {
   width: 100%;
   aspect-ratio: 4/5;
-  background:
-    radial-gradient(ellipse at 40% 30%, rgba(122, 72, 40, 0.5) 0%, transparent 60%),
-    linear-gradient(155deg, var(--walnut) 0%, var(--bordeaux-dark) 40%, var(--bordeaux-rich) 75%, var(--walnut) 100%);
+  object-fit: cover;
+  object-position: center 20%;
   border-radius: 2px;
-  overflow: hidden;
   box-shadow: var(--shadow-deep);
-  position: relative;
+  display: block;
+  transition: transform 0.6s ease;
 }
-
-.about-photo-placeholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: var(--grain);
-  background-size: 200px 200px;
-  opacity: 0.7;
-}
-
-.about-photo-placeholder::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, transparent 40%, rgba(19, 10, 6, 0.55) 100%);
-}
-
-.photo-inner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 28px;
-  z-index: 1;
-}
-.photo-inner-icon {
-  font-size: 3.5rem;
-  color: rgba(184, 148, 63, 0.28);
-  margin-bottom: auto;
-  margin-top: 40%;
-}
-.photo-inner-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(242, 232, 214, 0.45);
-  font-family: var(--font-sans);
+.about-photo-frame:hover .about-photo {
+  transform: scale(1.02);
 }
 
 /* Cadre décoratif décalé */
@@ -957,7 +945,7 @@ h1, h2, h3, h4 {
 .gallery-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  grid-template-rows: 260px 200px;
+  grid-auto-rows: 250px;
   gap: 10px;
 }
 
@@ -978,6 +966,20 @@ h1, h2, h3, h4 {
   position: relative;
   overflow: hidden;
   transition: all 0.45s ease;
+}
+
+/* Photos réelles dans la galerie */
+.gallery-placeholder img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+  z-index: 0;
+}
+.gallery-item:hover .gallery-placeholder img {
+  transform: scale(1.06);
 }
 
 /* Ambiances différentes pour chaque cellule */
@@ -1007,15 +1009,16 @@ h1, h2, h3, h4 {
     linear-gradient(145deg, #200A0E 0%, #6B2737 50%, #3E1018 100%);
 }
 
-/* Grain sur les placeholders galerie */
+/* Grain léger sur les photos galerie */
 .gallery-placeholder::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image: var(--grain);
   background-size: 200px 200px;
-  opacity: 0.6;
+  opacity: 0.18;
   z-index: 1;
+  mix-blend-mode: overlay;
 }
 
 /* Overlay hover */
@@ -1425,7 +1428,8 @@ a.contact-info-item:hover { color: var(--gold-light); }
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-sm);
-  padding: 11px 14px;
+  padding: 13px 14px;
+  min-height: 44px;
   color: rgba(242, 232, 214, 0.9);
   font-family: var(--font-sans);
   font-size: 0.9rem;
@@ -1578,6 +1582,169 @@ a.contact-info-item:hover { color: var(--gold-light); }
 .footer-legal { display: flex; gap: 18px; }
 .footer-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.22); }
 .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+/* ============================================================
+   SPIRIT — L'esprit du lieu
+   ============================================================ */
+.section.spirit { background: var(--ivory); }
+
+/* Chiffres clés */
+.spirit-stats {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background: var(--cream);
+  border: 1px solid var(--cream-deep);
+  border-radius: var(--radius);
+  margin-bottom: 52px;
+  overflow: hidden;
+}
+
+.spirit-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  text-align: center;
+}
+
+.spirit-stat-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--bordeaux);
+  line-height: 1;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.spirit-stat-unit { font-size: 0.6em; color: var(--gold); }
+
+.spirit-stat-label {
+  display: block;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.spirit-stat-sep {
+  width: 1px;
+  align-self: stretch;
+  background: var(--cream-deep);
+  flex-shrink: 0;
+}
+
+/* Manifesto / citation */
+.spirit-manifesto {
+  max-width: 520px;
+  margin: 0 auto 52px;
+  text-align: center;
+  border: none;
+  padding: 0;
+}
+
+.spirit-manifesto::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 22px;
+  opacity: 0.7;
+}
+
+.spirit-manifesto p {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.4vw, 1.18rem);
+  font-style: italic;
+  color: var(--walnut);
+  line-height: 1.8;
+}
+
+.spirit-manifesto::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  margin: 22px auto 0;
+  opacity: 0.7;
+}
+
+/* Trois piliers */
+.spirit-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.spirit-card {
+  background: var(--off-white);
+  border: 1px solid var(--cream-deep);
+  border-top: 2px solid var(--bordeaux);
+  border-radius: var(--radius-sm);
+  padding: 28px 22px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.spirit-card:hover {
+  box-shadow: var(--shadow-warm);
+  transform: translateY(-3px);
+}
+
+.spirit-card-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(107, 39, 55, 0.07);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bordeaux);
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+}
+
+.spirit-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.spirit-card p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.72;
+}
+
+@media (max-width: 1024px) {
+  .spirit-cards { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+}
+
+@media (max-width: 768px) {
+  .spirit-stats { flex-wrap: wrap; }
+  .spirit-stat { flex-basis: 45%; padding: 22px 12px; }
+  .spirit-stat-sep:nth-child(4) { display: none; }
+  .spirit-stat-sep { width: 1px; }
+  .spirit-cards { grid-template-columns: 1fr; gap: 12px; }
+  .spirit-card { padding: 22px 18px; }
+  .spirit-manifesto { margin-bottom: 36px; }
+}
+
+@media (max-width: 480px) {
+  .spirit-stat { flex-basis: 45%; padding: 18px 8px; }
+  .spirit-stat-number { font-size: 1.7rem; }
+  .spirit-manifesto { margin-bottom: 30px; }
+}
 
 /* ============================================================
    SCROLL PROGRESS BAR — 21st.dev style
@@ -1751,7 +1918,7 @@ a.contact-info-item:hover { color: var(--gold-light); }
     grid-template-columns: 1fr;
     gap: 44px;
   }
-  .about-photo-placeholder { aspect-ratio: 16/9; max-height: 290px; }
+  .about-photo { aspect-ratio: 16/9; max-height: 290px; object-position: center 30%; }
   .about-photo-frame::before { display: none; }
 
   .selections-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1773,17 +1940,17 @@ a.contact-info-item:hover { color: var(--gold-light); }
       "map"
       "form";
   }
-  .contact-map { min-height: 360px; }
-  .contact-map iframe { min-height: 360px; }
+  .contact-map { min-height: 300px; }
+  .contact-map iframe { min-height: 300px; }
 
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 220px 180px 180px;
+    grid-auto-rows: 200px;
   }
-  .gallery-item.g-tall { grid-row: span 1; }
+  .gallery-item.g-tall { grid-row: span 2; }
   .gallery-item.g-wide { grid-column: span 2; }
 }
 
@@ -1798,8 +1965,8 @@ a.contact-info-item:hover { color: var(--gold-light); }
   .nav-menu {
     position: fixed;
     top: 0; right: -100%;
-    height: 100vh;
-    width: min(290px, 82vw);
+    height: 100dvh;
+    width: min(280px, 75vw);
     background: rgba(19, 10, 6, 0.99);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1836,14 +2003,26 @@ a.contact-info-item:hover { color: var(--gold-light); }
 
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 180px 150px 150px;
+    grid-auto-rows: 170px;
   }
 
   .footer-grid { grid-template-columns: 1fr; }
   .footer-brand { grid-column: 1; }
   .footer-bottom { flex-direction: column; text-align: center; }
 
-  .whatsapp-float { bottom: 18px; right: 18px; width: 46px; height: 46px; }
+  .whatsapp-float { bottom: 18px; right: 18px; width: 48px; height: 48px; }
+  .whatsapp-tooltip { display: none; }
+
+  .contact-map { min-height: 240px; }
+  .contact-map iframe { min-height: 240px; }
+
+  .hero-scroll-indicator { display: none; }
+
+  .about-quote { padding: 18px 16px 16px; }
+
+  .section { padding: 64px 0; }
+
+  .container { padding: 0 20px; }
 }
 
 /* ============================================================
@@ -1859,11 +2038,28 @@ a.contact-info-item:hover { color: var(--gold-light); }
 
   .gallery-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-auto-rows: 200px;
   }
-  .gallery-item { height: 200px; }
-  .gallery-item.g-tall,
-  .gallery-item.g-wide { grid-column: 1; grid-row: 1; }
+  .gallery-item.g-tall { grid-row: span 1; }
+  .gallery-item.g-wide { grid-column: span 1; }
 
   .about-features { grid-template-columns: 1fr; }
+
+  .section { padding: 52px 0; }
+  .container { padding: 0 16px; }
+
+  .contact-map { min-height: 200px; }
+  .contact-map iframe { min-height: 200px; }
+}
+
+/* ============================================================
+   RESPONSIVE — Ultra-small ≤ 375px
+   ============================================================ */
+@media (max-width: 375px) {
+  .hero-title-main { font-size: clamp(2.4rem, 14vw, 3.2rem); }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn { width: 100%; max-width: 260px; }
+  .section { padding: 44px 0; }
+  .container { padding: 0 14px; }
+  .section-header { margin-bottom: 44px; }
 }
